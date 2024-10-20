@@ -9,14 +9,16 @@ function App() {
   const handleClick = () => {
     setCount(count + 1);
   };
+  const isEven = count % 2 === 0;
+
   return (
     <div className="App">
       <Button onClick={handleClick} />
 
       <CounterValue count={count} />
 
-      <div style={{ color: count % 2 === 0 ? "white" : "red" }}>
-        {count % 2 === 0 ? "Белое" : "Красное"}
+      <div style={{ color: isEven ? "white" : "red" }}>
+        {isEven ? "Белое" : "Красное"}
       </div>
     </div>
   );
